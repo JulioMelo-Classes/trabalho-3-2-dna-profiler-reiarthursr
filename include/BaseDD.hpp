@@ -1,8 +1,6 @@
 #ifndef BASEDD_H
 #define BASEDD_H
 #include "Pessoa.hpp"
-#include <string>
-#include <vector>
 
 /**
  * @brief Base de dados.
@@ -30,6 +28,21 @@ class BaseDD {
          * 
          */
         std::vector<std::string> strs;
+
+    public:
+        /**
+         * @brief Set the pessoas object
+         * 
+         * @param pessoas Vetor de pessoas.
+         */
+        void set_pessoas(std::vector<Pessoa> pessoas);
+
+        /**
+         * @brief Set the dna of pessoaA object
+         * 
+         * @param dna Dna da pessoaA.
+         */
+        void set_dna_pessoaA(std::string dna);
 };
 
 #endif

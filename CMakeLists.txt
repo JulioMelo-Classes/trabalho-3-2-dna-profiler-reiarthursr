@@ -7,7 +7,7 @@ project(dna VERSION 0.1 LANGUAGES CXX )
 include_directories( include )
 
 # Cria um executável com nome "dna", adiciona neste executável os arquivos src/dna.cpp src/sistema.cpp src/executor.cpp
-add_executable( dna
+add_executable( dna_profiler
                 src/Dna.cpp
 				src/Pessoa.cpp
                 src/BaseDD.cpp

@@ -1,7 +1,5 @@
 #ifndef PESSOA_H
 #define PESSOA_H
-#include <string>
-#include <vector>
 #include <map>
 
 /**
@@ -36,6 +34,15 @@ class Pessoa {
          * 
          */
         std::string dna;
+
+    public:
+        /**
+         * @brief Set the nome object
+         * 
+         */
+        void set_nome(std::string nome);
+
+        void set_perfil(std::map<std::string, int> perfil);
 };
 
 #endif

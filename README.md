@@ -163,4 +163,25 @@ A saída deve ser exatamente como mostrada nas imagens (com cores e tudo!)
 
 **Translation to Pt-Br and Further Adaptation: Julio Melo, [julio@imd.ufrn.br](mailto:julio@imd.ufrn.br)**
 
+Aluno: Arthur Soares Ramalho
 
+## Para compilar
+```console
+mkdir build
+cd build
+cmake ..
+cmake --build .
+```
+
+## Para executar
+Você pode rodar o sistema e em logo depois digitar os comandos seguidos de ENTER
+```console
+cd build
+./dna_profiler -d <database_file> -s <dna_sequence_file>
+```
+
+## Executar testes
+```console
+cd build
+./dna_profiler -d ../data/data.csv -s ../data/sequence_alice.txt
+```

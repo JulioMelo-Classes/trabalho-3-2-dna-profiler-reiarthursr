@@ -20,6 +20,26 @@ class Sistema {
          * 
          */
         Arquivos arquivos;
+
+        /**
+         * @brief Lê e armazena as informações dos arquivos na "baseDD"
+         * 
+         */
+        void lerArqs();
+    
+    public:
+        /**
+         * @brief Construct a new Sistema object
+         * 
+         * @param arquivos Arquivos a serem armazenados no sistema.
+         */
+        Sistema(Arquivos arquivos);
+
+        /**
+         * @brief Executa todas as funções encessárias para a busca e imprime o resultado.
+         * 
+         */
+        void executarBusca();
 };
 
 #endif
