@@ -171,6 +171,7 @@ mkdir build
 cd build
 cmake ..
 cmake --build .
+
 ```
 
 ## Para executar
@@ -178,10 +179,12 @@ Você pode rodar o sistema e em logo depois digitar os comandos seguidos de ENTE
 ```console
 cd build
 ./dna_profiler -d <database_file> -s <dna_sequence_file>
+
 ```
 
 ## Executar testes
 ```console
 cd build
 ./dna_profiler -d ../data/data.csv -s ../data/sequence_alice.txt
+
 ```

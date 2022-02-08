@@ -2,6 +2,9 @@
 #define PESSOA_H
 #include "BaseDD.hpp"
 #include "Arquivos.hpp"
+#include <iostream>
+#include <vector>
+#include <string>
 
 /**
  * @brief Centraliza as saidas para o usuário.

@@ -1,6 +1,8 @@
 #ifndef BASEDD_H
 #define BASEDD_H
 #include "Pessoa.hpp"
+#include <string>
+#include <vector>
 
 /**
  * @brief Base de dados.
@@ -13,14 +15,14 @@ class BaseDD {
          * Serão comparadas para encontrar o perfil desejado (pessoaA).
          * 
          */
-        std::vector<Pessoa> pessoas;
+        std::vector<Pessoa_> pessoas;
 
         /**
          * @brief Pessoa que não possui "nome" e possui um "dna".
          * Deve ser comparado com outros pefis para o encontrar.
          * 
          */
-        Pessoa pessoaA;
+        Pessoa_ pessoaA;
 
         /**
          * @brief Vetor de STRs.
@@ -35,7 +37,7 @@ class BaseDD {
          * 
          * @param pessoas Vetor de pessoas.
          */
-        void set_pessoas(std::vector<Pessoa> pessoas);
+        void set_pessoas(std::vector<Pessoa_> pessoas);
 
         /**
          * @brief Set the dna of pessoaA object

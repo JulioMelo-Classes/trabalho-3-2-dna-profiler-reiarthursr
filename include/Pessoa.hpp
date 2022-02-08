@@ -1,6 +1,8 @@
 #ifndef PESSOA_H
 #define PESSOA_H
 #include <map>
+#include <string>
+#include <vector>
 
 /**
  * @brief Classe Pessoa.
@@ -8,7 +10,7 @@
  * Usa o "dna" para criar um "perfil".
  * 
  */
-class Pessoa {
+class Pessoa_ {
     private:
         /**
          * @brief Nome da Pessoa deste perfil.
@@ -39,10 +41,23 @@ class Pessoa {
         /**
          * @brief Set the nome object
          * 
+         * @param nome a ser setado.
          */
         void set_nome(std::string nome);
 
+        /**
+         * @brief Set the perfil object
+         * 
+         * @param perfil a ser setado.
+         */
         void set_perfil(std::map<std::string, int> perfil);
+
+        /**
+         * @brief Set the dna object
+         * 
+         * @param dna a ser setado. Somente para a "pessoaA".
+         */
+        void set_dna(std::string dna);
 };
 
 #endif

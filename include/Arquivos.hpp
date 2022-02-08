@@ -1,6 +1,9 @@
 #ifndef ARQUIVOS_H
 #define ARQUIVOS_H
 #include "Pessoa.hpp"
+#include <vector>
+#include <string>
+#include <utility>
 
 /**
  * @brief Lê e os arquivos e armazena os resultados em BaseDD (STRs, Pessoas e DNA).
@@ -43,7 +46,7 @@ class Arquivos {
          * 
          * @return std::pair< std::vector<std::string>, std::vector<Pessoa> > STRs + Pessoas.
          */
-        std::pair< std::vector<std::string>, std::vector<Pessoa> > ler_arqBDD();
+        std::pair< std::vector<std::string>, std::vector<Pessoa_> > ler_arqBDD();
 
         /**
          * @brief Lê o arquivo de DNA e envia o resultado para "BaseDD"

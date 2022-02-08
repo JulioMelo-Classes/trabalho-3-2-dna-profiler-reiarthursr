@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.5)
-project(dna VERSION 0.1 LANGUAGES CXX )
+project(dna_profiler VERSION 0.1 LANGUAGES CXX )
 
 
 ### Executável
 # Diretório contendo os .hpp
 include_directories( include )
 
-# Cria um executável com nome "dna", adiciona neste executável os arquivos src/dna.cpp src/sistema.cpp src/executor.cpp
+# Cria um executável com nome "dna_profiler"
 add_executable( dna_profiler
                 src/Dna.cpp
 				src/Pessoa.cpp

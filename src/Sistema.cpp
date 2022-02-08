@@ -1,8 +1,5 @@
 #include "Sistema.hpp"
 #include "Pessoa.hpp"
-#include <iostream>
-#include <vector>
-#include <string>
 
 using namespace std;
 
