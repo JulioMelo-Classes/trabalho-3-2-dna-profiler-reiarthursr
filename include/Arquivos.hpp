@@ -36,6 +36,12 @@ class Arquivos {
         /**
          * @brief Construct a new Arquivos object
          * 
+         */
+        Arquivos();
+
+        /**
+         * @brief Construct a new Arquivos object
+         * 
          * @param arqBDD Arquivo da Base de dados.
          * @param arqDNA Arquivo do DNA.
          */
@@ -46,7 +52,7 @@ class Arquivos {
          * 
          * @return std::pair< std::vector<std::string>, std::vector<Pessoa> > STRs + Pessoas.
          */
-        std::pair< std::vector<std::string>, std::vector<Pessoa_> > ler_arqBDD();
+        std::pair< std::vector<std::string>, std::vector<Pessoa> > ler_arqBDD();
 
         /**
          * @brief Lê o arquivo de DNA e envia o resultado para "BaseDD"

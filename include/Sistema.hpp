@@ -1,5 +1,5 @@
-#ifndef PESSOA_H
-#define PESSOA_H
+#ifndef SISTEMA_H
+#define SISTEMA_H
 #include "BaseDD.hpp"
 #include "Arquivos.hpp"
 #include <iostream>

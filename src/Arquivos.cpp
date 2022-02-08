@@ -4,6 +4,12 @@
 
 using namespace std;
 
+Arquivos::Arquivos()
+{
+    arqBDD = "";
+    arqDNA = "";
+}
+
 Arquivos::Arquivos(string arqBDD, string arqDNA)
 {
     this->arqBDD = arqBDD;
@@ -30,16 +36,22 @@ pair< vector<string>, vector<Pessoa> > Arquivos::ler_arqBDD()
         // Pessoas
         while (getline(arquivoBDD, linha))
         {
+            linha.erase(linha.end()-1);//apagando último caracter----------------------
+
             Pessoa pessoa; // pessoa temporária. usada para inserir no vetor "pessoas"
 
             vector<string> tempVet = dividir_linha(linha, ','); // dividindo a linha em variáveis
 
             pessoa.set_nome(tempVet[0]); // armazenando nome da "pessoa"
+            cout<<"nome: ["<<tempVet[0]<<"]"<<endl;//-------------------------------------------------
             tempVet.erase(tempVet.begin()); // deletando nome da "pessoa" do "tempVet"
 
             map<string, int> perfil; // perfil temporário. usado na "pessoa"
             for (size_t i = 0; i < stds.size(); i++) // armazenando perfil em "pessoa"
+            {
                 perfil[stds[i]] = stoi(tempVet[i]);
+                cout<<"std: ["<<tempVet[i]<<"] stoi["<<stoi(tempVet[i])<<"]"<<endl;//---------------------------
+            }
 
             pessoa.set_perfil(perfil); // setando perfil na "pessoa"
 
@@ -63,6 +75,8 @@ string Arquivos::ler_arqDNA()
     if(arquivoDNA.is_open())
     {
         getline(arquivoDNA, linha); // armazenando DNA na "linha"
+        linha.erase(linha.end()-1);//apagando último caracter----------------------
+        cout<<"dna: ["<<linha<<"]"<<endl;//--------------------------------
     }
     else cout<<"Erro no arquivo."<<endl;
 

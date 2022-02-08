@@ -10,7 +10,7 @@
  * Usa o "dna" para criar um "perfil".
  * 
  */
-class Pessoa_ {
+class Pessoa {
     private:
         /**
          * @brief Nome da Pessoa deste perfil.
@@ -51,6 +51,13 @@ class Pessoa_ {
          * @param perfil a ser setado.
          */
         void set_perfil(std::map<std::string, int> perfil);
+
+        /**
+         * @brief Get the perfil object
+         * 
+         * @return std::map<std::string, int> perfil.
+         */
+        std::map<std::string, int> get_perfil();
 
         /**
          * @brief Set the dna object

@@ -15,14 +15,14 @@ class BaseDD {
          * Serão comparadas para encontrar o perfil desejado (pessoaA).
          * 
          */
-        std::vector<Pessoa_> pessoas;
+        std::vector<Pessoa> pessoas;
 
         /**
          * @brief Pessoa que não possui "nome" e possui um "dna".
          * Deve ser comparado com outros pefis para o encontrar.
          * 
          */
-        Pessoa_ pessoaA;
+        Pessoa pessoaA;
 
         /**
          * @brief Vetor de STRs.
@@ -37,7 +37,7 @@ class BaseDD {
          * 
          * @param pessoas Vetor de pessoas.
          */
-        void set_pessoas(std::vector<Pessoa_> pessoas);
+        void set_pessoas(std::vector<Pessoa> pessoas);
 
         /**
          * @brief Set the dna of pessoaA object
