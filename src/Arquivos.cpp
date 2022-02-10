@@ -30,6 +30,7 @@ pair< vector<string>, vector<Pessoa> > Arquivos::ler_arqBDD()
     {
         // STDs
         getline(arquivoBDD, linha); // armazenando STDs na "linha"
+        linha.erase(linha.end()-1);//apagando último caracter----------------------
         stds = dividir_linha(linha, ','); // armazenando variázeis em "stds"
         stds.erase(stds.begin()); // apagando variável "nome" de "stds"
 

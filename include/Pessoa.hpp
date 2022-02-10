@@ -72,7 +72,7 @@ class Pessoa {
          * @param stds a serem usados para a criação do perfil.
          * @return std::string resultado da criação do perfil, pronto para imprimir.
          */
-        std::string criarPerfil(std::vector<std::string> stds);
+        std::string criarPerfil(std::vector<std::string> strs);
 };
 
 #endif

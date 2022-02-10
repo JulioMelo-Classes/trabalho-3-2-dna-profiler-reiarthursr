@@ -47,6 +47,13 @@ class BaseDD {
         void set_dna_pessoaA(std::string dna);
 
         /**
+         * @brief Set the strs object
+         * 
+         * @param strs a serem testados
+         */
+        void set_strs(std::vector<std::string> strs);
+
+        /**
          * @brief Cria o "perfil" da "pessoaA" a partir do seu "dna" e retorna os resultados.
          * 
          * @return std::string resultados da criação do "perfil" a partir do "dna", pronto para imprimir.
