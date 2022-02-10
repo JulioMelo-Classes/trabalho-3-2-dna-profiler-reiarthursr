@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/dna_profiler.dir/src/Dna.cpp.o CMakeFiles/dna_profiler.dir/src/Pessoa.cpp.o CMakeFiles/dna_profiler.dir/src/BaseDD.cpp.o CMakeFiles/dna_profiler.dir/src/Arquivos.cpp.o CMakeFiles/dna_profiler.dir/src/Sistema.cpp.o  -o dna_profiler 
