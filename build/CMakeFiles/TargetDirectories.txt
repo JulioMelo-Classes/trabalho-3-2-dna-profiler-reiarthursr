@@ -1,3 +1,0 @@
-/mnt/c/Users/soare/Documents/GitHub/trabalho-3-2-dna-profiler-reiarthursr/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/soare/Documents/GitHub/trabalho-3-2-dna-profiler-reiarthursr/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/soare/Documents/GitHub/trabalho-3-2-dna-profiler-reiarthursr/build/CMakeFiles/dna_profiler.dir

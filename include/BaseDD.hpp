@@ -45,6 +45,13 @@ class BaseDD {
          * @param dna Dna da pessoaA.
          */
         void set_dna_pessoaA(std::string dna);
+
+        /**
+         * @brief Cria o "perfil" da "pessoaA" a partir do seu "dna" e retorna os resultados.
+         * 
+         * @return std::string resultados da criação do "perfil" a partir do "dna", pronto para imprimir.
+         */
+        std::string criarPerfilPessoaA();
 };
 
 #endif

@@ -65,6 +65,14 @@ class Pessoa {
          * @param dna a ser setado. Somente para a "pessoaA".
          */
         void set_dna(std::string dna);
+
+        /**
+         * @brief Cria um "perfil" para a Pessoa com base em seu "dna".
+         * 
+         * @param stds a serem usados para a criação do perfil.
+         * @return std::string resultado da criação do perfil, pronto para imprimir.
+         */
+        std::string criarPerfil(std::vector<std::string> stds);
 };
 
 #endif

@@ -60,6 +60,20 @@ class Arquivos {
          * @return std::string DNA.
          */
         std::string ler_arqDNA();
+
+        /**
+         * @brief Get the arqBDD object
+         * 
+         * @return std::string arqBDD
+         */
+        std::string get_arqBDD();
+
+        /**
+         * @brief Get the arqDNA object
+         * 
+         * @return std::string arqDNA
+         */
+        std::string get_arqDNA();
 };
 
 #endif

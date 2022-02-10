@@ -11,3 +11,8 @@ void BaseDD::set_dna_pessoaA(string dna)
 {
     pessoaA.set_dna(dna); // seta "dna" da "pessoaA"
 }
+
+string BaseDD::criarPerfilPessoaA()
+{
+    return pessoaA.criarPerfil(strs); // cria o perfil da "pessoaA" e retorna o resultado, pronto para imprimir
+}

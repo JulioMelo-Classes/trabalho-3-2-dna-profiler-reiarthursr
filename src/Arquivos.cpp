@@ -43,14 +43,14 @@ pair< vector<string>, vector<Pessoa> > Arquivos::ler_arqBDD()
             vector<string> tempVet = dividir_linha(linha, ','); // dividindo a linha em variáveis
 
             pessoa.set_nome(tempVet[0]); // armazenando nome da "pessoa"
-            cout<<"nome: ["<<tempVet[0]<<"]"<<endl;//-------------------------------------------------
+            //cout<<"nome: ["<<tempVet[0]<<"]"<<endl;//-------------------------------------------------
             tempVet.erase(tempVet.begin()); // deletando nome da "pessoa" do "tempVet"
 
             map<string, int> perfil; // perfil temporário. usado na "pessoa"
             for (size_t i = 0; i < stds.size(); i++) // armazenando perfil em "pessoa"
             {
                 perfil[stds[i]] = stoi(tempVet[i]);
-                cout<<"std: ["<<tempVet[i]<<"] stoi["<<stoi(tempVet[i])<<"]"<<endl;//---------------------------
+                //cout<<"std: ["<<tempVet[i]<<"] stoi["<<stoi(tempVet[i])<<"]"<<endl;//---------------------------
             }
 
             pessoa.set_perfil(perfil); // setando perfil na "pessoa"
@@ -76,13 +76,23 @@ string Arquivos::ler_arqDNA()
     {
         getline(arquivoDNA, linha); // armazenando DNA na "linha"
         linha.erase(linha.end()-1);//apagando último caracter----------------------
-        cout<<"dna: ["<<linha<<"]"<<endl;//--------------------------------
+        //cout<<"dna: ["<<linha<<"]"<<endl;//--------------------------------
     }
     else cout<<"Erro no arquivo."<<endl;
 
     arquivoDNA.close(); // fechando arquivo
 
     return linha;
+}
+
+string Arquivos::get_arqBDD()
+{
+    return arqBDD;
+}
+
+string Arquivos::get_arqDNA()
+{
+    return arqDNA;
 }
 
 vector<string> Arquivos::dividir_linha(string linha, char delimiter)
