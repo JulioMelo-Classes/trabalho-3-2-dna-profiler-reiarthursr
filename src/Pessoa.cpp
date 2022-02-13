@@ -7,6 +7,11 @@ void Pessoa::set_nome(string nome)
     this->nome = nome;
 }
 
+string Pessoa::get_nome()
+{
+    return nome;
+}
+
 void Pessoa::set_perfil(map<string, int> perfil)
 {
     this->perfil = perfil;
@@ -41,7 +46,7 @@ string Pessoa::criarPerfil(std::vector<std::string> strs)
             int letraStr = 0; // indica qual letra do STR deverá ser a próxima
 
             //verificar se é um conjunto de STR e contar quantos STRs possui
-            for (size_t jPos = iPos; jPos < dna.size() -iStr.size() +1; jPos++)
+            for (size_t jPos = iPos; jPos < dna.size(); jPos++)
             {
                 if(dna[jPos] == iStr[letraStr]) // se a letra for a próxima letra do STR
                 {
@@ -62,14 +67,16 @@ string Pessoa::criarPerfil(std::vector<std::string> strs)
             }
         }
 
-        cout<<iStr<<": "<<posMaior<<", "<<qntMaior<<endl;//---------------------------------------------
+        //cout<<iStr<<": "<<posMaior<<", "<<qntMaior<<endl;//---------------------------------------------
         posQntStrs.push_back({posMaior, qntMaior}); // armazenando valores
     }
 
-    //criar o perfil usando "posQntStrs"-----------------------------------------------
+    // criando "perfil" da "pessoaA"
+    for (size_t i = 0; i < strs.size(); i++)
+        perfil[strs[i]] = posQntStrs[i].second;
 
     //função que monta o "resultadoPerfil" que será imprimido----------------------------
         
-    resultadoPerfil = "";//----------------------------------------------------------
+    resultadoPerfil = "RESULTADO INCOMPLETO";//----------------------------------------------------------
     return resultadoPerfil;
 }

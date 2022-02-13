@@ -46,6 +46,13 @@ class Pessoa {
         void set_nome(std::string nome);
 
         /**
+         * @brief Get the nome object
+         * 
+         * @return std::string nome
+         */
+        std::string get_nome();
+
+        /**
          * @brief Set the perfil object
          * 
          * @param perfil a ser setado.

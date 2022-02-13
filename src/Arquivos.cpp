@@ -21,18 +21,18 @@ pair< vector<string>, vector<Pessoa> > Arquivos::ler_arqBDD()
     ifstream arquivoBDD; // arquivo
     string linha; // linha lida do arquivo
 
-    vector<string> stds; // usado para retornar os "STDs"
+    vector<string> strs; // usado para retornar os "STrs"
     vector<Pessoa> pessoas; // usado para retornas as "pessoas"
 
     arquivoBDD.open(arqBDD); //abrindo arquivo
 
     if(arquivoBDD.is_open())
     {
-        // STDs
-        getline(arquivoBDD, linha); // armazenando STDs na "linha"
+        // STRs
+        getline(arquivoBDD, linha); // armazenando STRs na "linha"
         linha.erase(linha.end()-1);//apagando último caracter----------------------
-        stds = dividir_linha(linha, ','); // armazenando variázeis em "stds"
-        stds.erase(stds.begin()); // apagando variável "nome" de "stds"
+        strs = dividir_linha(linha, ','); // armazenando variázeis em "strs"
+        strs.erase(strs.begin()); // apagando variável "nome" de "strs"
 
         // Pessoas
         while (getline(arquivoBDD, linha))
@@ -48,10 +48,10 @@ pair< vector<string>, vector<Pessoa> > Arquivos::ler_arqBDD()
             tempVet.erase(tempVet.begin()); // deletando nome da "pessoa" do "tempVet"
 
             map<string, int> perfil; // perfil temporário. usado na "pessoa"
-            for (size_t i = 0; i < stds.size(); i++) // armazenando perfil em "pessoa"
+            for (size_t i = 0; i < strs.size(); i++) // armazenando perfil em "pessoa"
             {
-                perfil[stds[i]] = stoi(tempVet[i]);
-                //cout<<"std: ["<<tempVet[i]<<"] stoi["<<stoi(tempVet[i])<<"]"<<endl;//---------------------------
+                perfil[strs[i]] = stoi(tempVet[i]);
+                //cout<<"str: ["<<tempVet[i]<<"] stoi["<<stoi(tempVet[i])<<"]"<<endl;//---------------------------
             }
 
             pessoa.set_perfil(perfil); // setando perfil na "pessoa"
@@ -63,7 +63,7 @@ pair< vector<string>, vector<Pessoa> > Arquivos::ler_arqBDD()
 
     arquivoBDD.close(); // fechando arquivo
 
-    return {stds, pessoas};
+    return {strs, pessoas};
 }
 
 string Arquivos::ler_arqDNA()

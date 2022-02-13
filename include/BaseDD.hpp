@@ -59,6 +59,14 @@ class BaseDD {
          * @return std::string resultados da criação do "perfil" a partir do "dna", pronto para imprimir.
          */
         std::string criarPerfilPessoaA();
+
+        /**
+         * @brief Busca o perfil da "pessoaA", retornando seu nome caso o encontre.
+         * 
+         * @return std::pair<bool, std::string> TRUE caso encontre, também retornando o nome.
+         * FALSE caso não encontre, retornando também uma string vazia.
+         */
+        std::pair<bool, std::string> buscarPerfil();
 };
 
 #endif

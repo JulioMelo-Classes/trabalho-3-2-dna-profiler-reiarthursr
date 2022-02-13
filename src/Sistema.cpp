@@ -12,6 +12,7 @@ void Sistema::executarBusca()
 {
     cout<<"================================================="<<endl;
     cout<<"Welcome to the Basic DNA Profiler, v1.0"<<endl;
+    cout<<"Arthur Soares Ramalho"<<endl;
     cout<<"================================================="<<endl<<endl;
     cout<<"\e[34;10mThis program loads a DNA database and an unknown"<<endl;
     cout<<"DNA sequence and tries to find a match between"<<endl;
@@ -22,7 +23,19 @@ void Sistema::executarBusca()
     // cria o perfil da "pessoaA" e retorna o resultado, pronto para imprimir
     string resultadoPerfil = baseDD.criarPerfilPessoaA();
 
-    //comparar com base de dados----------------------------------------------------
+    // procurando perfil na Base de Dados
+    cout<<"[+] Searching the database for a match... please wait."<<endl<<endl<<endl;
+
+    auto buscaPerfil = baseDD.buscarPerfil(); // comparando perfil com a base de dados, retornando o nome
+
+    if(buscaPerfil.first) // se encontrar o perfil
+    {
+        cout<<"Match ID (99.9%): "<<buscaPerfil.second<<endl;
+        cout<<"DNA Profile:"<<endl;
+        cout<<resultadoPerfil<<endl;
+    }
+    else // se não encontrar o perfil
+        cout<<">>> Sorry, no match in our database."<<endl;
 }
 
 void Sistema::lerArqs()
