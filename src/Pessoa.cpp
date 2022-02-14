@@ -1,5 +1,5 @@
 #include "Pessoa.hpp"
-#include <iostream>//apagar---------------------------------------------------------------
+//#include <iostream>//apagar---------------------------------------------------------------
 using namespace std;
 
 void Pessoa::set_nome(string nome)
@@ -27,10 +27,8 @@ void Pessoa::set_dna(string dna)
     this->dna = dna;
 }
 
-string Pessoa::criarPerfil(std::vector<std::string> strs)
+string Pessoa::criarPerfil(vector<string> strs)
 {
-    string resultadoPerfil; // resultado a ser impresso
-
     // armazena a posição do conjunto de STRs e a quantidade de STRs neste conjunto
     vector<pair<int, int>> posQntStrs;
 
@@ -75,8 +73,79 @@ string Pessoa::criarPerfil(std::vector<std::string> strs)
     for (size_t i = 0; i < strs.size(); i++)
         perfil[strs[i]] = posQntStrs[i].second;
 
-    //função que monta o "resultadoPerfil" que será imprimido----------------------------
+    return resultadoPerfil(posQntStrs, strs); // retorna o resultado a ser impresso
+}
+
+string Pessoa::resultadoPerfil(vector< pair<int, int> > posQntStrs, vector<string> strs)
+{
+    string resultado; // resultado a ser retornado
+
+    // nome e quantidade de STRs "TATC [x8]"
+    resultado += " ";
+    for (size_t i = 0; i < dna.size(); i++) // percorrer cada letra do DNA
+    {
+        bool pular = false;
+        for (size_t j = 0; j < strs.size(); j++) // verificar se tem conjunto de STR
+        {
+            if(i == posQntStrs[j].first) // verificando se está no inicio de um conjunto de STR
+            {
+                string addResultado = strs[j]+" [x"+to_string(posQntStrs[j].second)+"]";
+                i += addResultado.size() -1; // pulando onde já foi escrito
+                resultado += addResultado;
+
+                pular = true;
+                break;
+            }
+        }
         
-    resultadoPerfil = "RESULTADO INCOMPLETO";//----------------------------------------------------------
-    return resultadoPerfil;
+        if(!pular) resultado += " ";
+    }
+
+    resultado += "\n"; // adicionando quebra de linha
+    
+    // indicar onde estão os conjuntos de STRs com setas "vvvvvvvvv"
+    resultado += " ";
+    for (size_t i = 0; i < dna.size(); i++) // percorrer cada letra do DNA
+    {
+        bool pular = false;
+        for (size_t j = 0; j < strs.size(); j++) // verificar se tem conjunto de STR
+        {
+            if(i == posQntStrs[j].first) // verificando se está no inicio de um conjunto de STR
+            {
+                for (size_t k = 0; k < posQntStrs[j].second*strs[j].size(); k++)
+                    resultado += "v"; // adicionando setas ao "resultado"
+
+                i += posQntStrs[j].second*strs[j].size() -1;
+
+                pular = true;
+                break;
+            }
+        }
+        
+        if(!pular) resultado += " ";
+    }
+
+    resultado += "\n"; // adicionando quebra de linha
+
+    // colorir sequência de DNA onde estão os conjuntos de STRs
+    resultado += "[";
+    for (size_t i = 0; i < dna.size(); i++)
+    {
+        bool fimConj = false; // se for fim de um conjunto de STR
+        for (size_t j = 0; j < strs.size(); j++) // verificar se tem conjunto de STR
+        {
+            if(i == posQntStrs[j].first) // verificando se está no inicio de um conjunto de STR
+                resultado += "\e[32;10m"; // ativando cor verde
+            else if(i == posQntStrs[j].first + posQntStrs[j].second*strs[j].size() -1)
+                fimConj = true;
+        }
+
+        resultado += dna[i];
+
+        if(fimConj) resultado += "\e[m"; // desligando cor
+    }
+    
+    resultado += "]";
+
+    return resultado;
 }

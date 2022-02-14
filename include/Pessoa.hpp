@@ -37,6 +37,15 @@ class Pessoa {
          */
         std::string dna;
 
+        /**
+         * @brief Retorna o resultado da criação do perfil, pronto para imprimir.
+         * 
+         * @param posQntStrs armazena a posição do conjunto de STRs e a quantidade de STRs neste conjunto.
+         * @param strs nomes dos STRs
+         * @return std::string resultado da criação do perfil, pronto para imprimir.
+         */
+        std::string resultadoPerfil(std::vector< std::pair<int, int> > posQntStrs, std::vector<std::string> strs);
+
     public:
         /**
          * @brief Set the nome object
