@@ -12,7 +12,6 @@ cmake --build .
 ```
 
 ## Para executar
-Você pode rodar o sistema e em logo depois digitar os comandos seguidos de ENTER
 ```console
 cd build
 ./dna_profiler -d <database_file> -s <dna_sequence_file>
