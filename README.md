@@ -22,11 +22,9 @@ cd build
 ## Executar testes
 ```console
 cd build
-./dna_profiler -d ../data/data.csv -s ../data/sequence_alice.txt
-./dna_profiler -d ../data/data.csv -s ../data/sequence_bob.txt
-./dna_profiler -d ../data/data.csv -s ../data/sequence_charlie.txt
-./dna_profiler -d ../data/data.csv -s ../data/sequence_no_match.txt
+./dna_profiler -d ../data/data_teste.csv -s ../data/sequence_teste0no_match.txt
 ./dna_profiler -d ../data/data_teste.csv -s ../data/sequence_teste1.txt
 ./dna_profiler -d ../data/data_teste.csv -s ../data/sequence_teste2erro.txt
+./dna_profiler -d ../data/data_teste.csv -s ../data/sequence_teste3.txt
 
 ```
